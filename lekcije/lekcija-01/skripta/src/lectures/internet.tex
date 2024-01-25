@@ -2,8 +2,6 @@
 
 \section[Internet]{Internet}
 
-\subsection{Arhitektura}
-
 Predače Interneta kao što su ARPANET bile su u početku eksluzivne.
 Broj korisnika bio je malen, ograničen na profesijonalne korisnike, uglavnom sveučilišta i vladine organizacije.
 Stoga je i broj \textbf{čvorova} bio relativno mali.
@@ -40,13 +38,133 @@ Pomoću njih obavještajne agencije mogu provoditi kibernetičku špijunažu.\fo
     \caption{Međukontinentalna mreža podvodnih komunikacijskih kablova koji služe kao kralježnica Interneta iz 2015. Izvor: OpenStreetMap. }\label{fig:figure6}
 \end{figure}
 
-
-
-
-
 \subsection{Adresiranje, domene i DNS}
 
+Svaka web stranica ima svoju adresu.
+To je uvjetovano činjenicom da mora postojati neki standardizirani sustav pomoću kojeg će računala pronalaziti jedni druge.
+Kroz korištenje Interneta, primjetili ste da koju god stranicu otvorite, vaš preglednik će prikazati neku adresu, npr. \verb|google.com|, \verb|carnet.hr| ili \verb|github.com|.
+Takva vrsta web adrese je \textbf{domena}.
+
+\definition{Domena je naziv koji označava određenu web stranicu ili područje unutar Interneta.}
+
+Postoji nekoliko vrsta domena.
+Najviša razina su \textbf{vršne domene} (engl. \textit{top-level domains}, \textbf{TLDs}).
+One uključuju \verb|.com|, \verb|.net|, \verb|.org|, \verb|.edu|, \verb|.hr|.
+
+Vršne domene se mogu nadalje podjeliti na \textbf{generičke domene} (\textbf{gTLDs}, npr. \verb|.com|, \verb|.edu|, \verb|.net|, itd.) i \textbf{geografske domene} (\textbf{ccTLDs}, npr. \verb|.hr|, \verb|.us|, \verb|.uk|, \verb|.de|, itd.).
+Generičke domene sastoje se od tri znaka, a geografske od dva.
+Pomoću vršnih domena mogu se registrairati vlastite domene preko \textbf{registara domena}.
+
+\definition{Registar domena je organizacija koja je dobila dozvolu od ICANN-a da korisnicima nudi (većinom komercijalnu) uslugu registracije, odnosno kupnje, domena.}
+
+Gotovo svaka stranica na Webu ima svoju domenu.
+Domene nisu ni skupe za registrirati.
+Prosječna \verb|.com| ili \verb|.net| domena košta oko 10€ godišnje.
+Uz domene je moguće registrirati i beskonačni broj \textbf{poddomena}, npr. \verb|ocjene.skole.hr| ili \verb|www.google.com|.
+Organizacija koja je zadužena za upravljanjem domena je Internetska korporacija za dodjeljena imena i brojeve (engl. \textit{Internet Corporation for Assigned Names and Numbers}, \textbf{ICANN}).
+
+Međutim, iako su domene korisne za lako pamćenje i navigiranje Internetom, one nisu zapravo način na koji su uređaji na Internetu adresirani.
+Iza svake domene leži IP (engl. \textit{Internet Protocol}) adresa.
+IP je mrežni protokol (O mrežnim protokolima ćemo detaljnije u sljedećem poglavlju.) koji omogućava da uređaji u mreži međusobno šalju informacije.
+Ta mreža ne mora biti Internet.
+U IP-u, podaci se šalju u obliku \textbf{podatkovnih paketa}.
+Svaki podatkovni paket sadrži metapodatke, adresu pošiljatelja, primatelja, i slično, te sam sadržaj paketa.
+
+Svaki uređaj povezan u bilo koju vrstu računalne mreže, npr.\ preko rutera, dobiti će svoju jedinstvenu, lokalnu IP adresu.
+Naravno, svaki uređaj također ima i javnu IP adresu, onu vidljivu uređajima na širem Internetu.
+Važno je naglasiti da (u kućnim LAN mrežama) javnu IP adresu obično nema svaki pojedini uređaj; ruter ima svoju javnu IP adresu koja je onda zajednička svim uređajima koji su povezani pomoću njega.\footnote{Za veliku većinu nekomercijalnih korisnika Interneta, njihova javna IP adresa je dinamička, što znači da se svako malo mjenja. Statičke IP adrese se obično koriste kada je računalo ujedno i server.}
+
+IP adrese su brojevi.
+Najčešći oblik IP adrese su \textbf{IPv4 adrese}\footnote{IPv4 označuje četvrtu verziju Internet Protokola.}.
+IPv4 adrese sastoje se od 32 bita, što znači da je maksimalni broj IPv4 adresa $ 2^{32} $ (4,294,967,796).
+Drugim riječima, najveći broj uređaja koji mogu biti adresirani na Internetu pomoću IPv4 adresa je $ 2^{32} $.
+
+IPv4 adrese se zapisuju u obliku četiri 8-bitnih brojeva odjeljeni s točkom: \verb|A.B.C.D|.
+Primjeri IPv4 adresa uključuju \verb|8.8.8.8|, \verb|245.40.3.36| i \verb|127.0.0.1|.
+IP adresa \verb|127.0.0.1| je rezervirana te označava računalo koje je poslalo zahtjev, njezina kratica je \verb|localhost|.
+Drugim riječma, bilo koji promet poslan na nju biti će vraćen nazad pošiljatelju.
+Najveći osmobitni broj je $ 2^8 - 1 $ (255).
+Dakle, svaki broj u IPv4 adresi ne može biti veći od 255, odnosno najveća IPv4 adresa je \verb|255.255.255.255|.
+
+U početku je to bilo više nego dovoljno.
+Nitko nije mogao predvidjeti da će Internet postati ovako veliki kakva je danas.
+Polako je to postalo nedovoljno jer se sve više računala povezivalo na Internet.
+IPv4 adrese postaju sve skuplje zbog toga (velika potražnja, mala ponuda).
+Internet je danas u procesu prebacivanja na \textbf{IPv6 adrese} koje se sastoje od 128 bitova.
+Dakle, s IPv6 adresama, je moguće adresirati $ 2^{128} $ uređaja na Internetu.
+IPv6 adrese se zapisuju u obliku osam četveroznamenkastih heksadekadskih brojeva odvojeni s dvotočkom, npr. \verb|6802:f535:52bb:a290:a069:5e2e:470c:c3ca|.
+
+Prevođenje između domena, jezik koji ljudi koriste za pronalazak stranica, i IP adresa, jezik koji koriste računala, događa se preko DNS-a (engl. \textit{Domain Name System}).
+DNS sustav sastoji se od \textbf{imenskih servera} koji zapravo provode prevođenje između domena i IP adresa.
+Također, DNS je hijerarhiski.
+To znači da ne mora svaki imenski server sadržavati popis svih domena i pripadajućih IP adresa već samo mali komad.
+Kada preglednik otvara neku stranicu, zatražiti će od DNS-a da prevede tu domenu u IP adresu.
+DNS će prvo provjeriti lokalni spremnik, ako tamo nema zapisa ili ako IP adresa više nije valjana, onda će zahtjev prosljediti mjerodavnijem imenskom serveru, npr.\ od ISP-a, sve dok ne dođe to točne IP adrese koju će onda vratiti pregledniku.
+
+\definition{Imenski server je server u DNS-u koji procesira zahtjeve za prevođenje (rezoluciju) domena u IP adrese.}
+
+\begin{figure}[h]
+    \includegraphics[scale = 0.5]{dns}
+    \caption{Hijerarhija DNS-a.}\label{fig:dns}
+\end{figure}
 
 \subsection{Mrežni protokoli}
 
+Svaki računalni sustav ima u sebe ugrađene protokole.
+Oni mogu biti implicitni, programer može napraviti protokol bez da to primjeti.
+Uzmimo za primjer aplikaciju kao što je WhatsApp.
+Ona mora obavijestiti korisnika kada je primio nove poruke.
+Jednostavna verzija protokola za provjeru dostupnosti novih poruka može biti sljedeća:
+\begin{enumerate}
+    \item Klijent (aplikacija) šalje zahtjev serveru za provjeru novih poruka.
+    \item Server provjeri s bazom podataka jesu li dostupne nove poruke.
+    \item Server odgovori klijentu: (a) ako su nove poruke dostupne, odgovori da su dostupne i pošalje nazad te poruke ili (b) ako nisu dostupne, odgovori da nema novih poruka.
+    \item Klijent obavijesti server da je primio poruke.
+    \item Server označi u bazi podataka da su te poruke poslane klijentu, odnosno da više nisu nove.
+    \item Klijent i server zatvore vezu.
+    \item Klijent pričeka 15 sekundi prije no što ponovi zahtjev za provjeru.
+\end{enumerate}
+
+Ovakav protokol bi radio, ali nije najbolje rješenje.
+Glavne mane su mu to što:
+\begin{enumerate}
+    \item Korisnik mora čekati najviše 15 sekundi prije nego što može primiti poruku. Kod suvremenih aplikacija to vrijeme je znatno manje.
+    \item Klijent će često naletiti na situaciju gdje šalje nepotrebne zahtjeve serveru kada novih poruka nema te na taj način oduzima dragocjeno vrijeme serveru.
+    \item Server neće prekinuti vezu ako klijent nije poslao obavijest da je primio poruku nakon nekog vremena.
+    \item Nema mehanizam da server ponovno pokuša poslati poruke klijentu ako u prijašnjem pokušaju nije obavijestio server da je primio poruke.
+\end{enumerate}
+
+Bolje rješenje bilo bi ono u kojem server obavještava korisnika kada su nove poruke dostupne, umjesto da klijent svakih nekoliko sekundi ili minuta šalje zahtjev serveru.
+Tako bi korisnik vrlo brzo saznao da su mu poslane nove poruke i mreža bi bila pod puno manjim opterećenjem jer se zahtjevi šalju samo kada je to nužno.
+Iz ovog primjera možemo izvesti sljedeću definiciju protokola.
+
 \definition{Mrežni protokol je (obično standardizirani) skup pravila koja omogućuju koordinaciju i komunikaciju između dva ili više programa ili računala u mreži.}
+
+Nakon IP-a, sljedeći najbitniji protokol koji tvori TCP/IP skup protokola je \textbf{TCP} (engl. \textit{Transmission Control Protocol}).
+U prijašnjem poglavlju smo rekli da IP omogućuje uređajima da međusobno šalju podatke u obliku podatkovnih paketa.
+Međutim, tu IP staje.
+IP se bavi isključivo slanjem informacije između računala, a ne i među programima unutar tih računala.
+Za to nam treba TCP.
+Svaki program koji ima otvorenu vezu prema nekom drugom računalu ili programu imati će dodjeljeni \textbf{port}.
+
+\definition{Port je broj veličine 16 bitova koji omogućuje TCP-u da unutar jednog računala ispravno i precizno šalje podatkovne pakete na njihova odredišta.}
+
+Kako je port broj od 16 bitova, najveći port je \verb|65535|.
+Port se zapisuje nakon IP adrese i od nje odvaja dvotočkom, npr. \verb|127.0.0.1:443|.
+
+\begin{table}[]
+    \begin{tabular}{|l|l|l|}
+        \hline
+        \multicolumn{1}{|c|}{\textbf{Rezervirani port}} & \multicolumn{1}{c|}{\textbf{Protokol}} & \textbf{Svrha protokola}                                                                                                     \\ \hline
+        21                                              & FTP                                    & Slanje i primanje datoteka i mapa između računala.                                                                           \\ \hline
+        80                                              & HTTP                                   & Glavni protokol za web stranice i web servere.                                                                               \\ \hline
+        443                                             & HTTPS                                  & \begin{tabular}[c]{@{}l@{}}Sigurna verzija HTTP-a koja osigurava da samo\\ klijent i server mogu čitati poruke.\end{tabular} \\ \hline
+        22                                              & SSH                                    & Sigurno povezivanje na terminal servera.                                                                                             \\ \hline
+        25                                              & SMTP                                   & Slanje i primanje elektroničke pošte.                                                                                        \\ \hline
+        53                                              & DNS                                    & Prevođenje domena u IP adrese.                                                                                               \\ \hline
+    \end{tabular}
+    \centering
+    \caption{Popis čestih rezerviranih portova i pripadajućih protokola.}
+    \label{tab:ports}
+\end{table}
+
