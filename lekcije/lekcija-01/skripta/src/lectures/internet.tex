@@ -1,4 +1,5 @@
-% TeX root = ../main.tex
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}% TeX root = ../main.tex
 
 \section[Internet]{Internet}
 
@@ -75,7 +76,7 @@ Naravno, svaki uređaj također ima i javnu IP adresu, onu vidljivu uređajima n
 Važno je naglasiti da (u kućnim LAN mrežama) javnu IP adresu obično nema svaki pojedini uređaj; ruter ima svoju javnu IP adresu koja je onda zajednička svim uređajima koji su povezani pomoću njega.\footnote{Za veliku većinu nekomercijalnih korisnika Interneta, njihova javna IP adresa je dinamička, što znači da se svako malo mjenja. Statičke IP adrese se obično koriste kada je računalo ujedno i server.}
 
 IP adrese su brojevi.
-Najčešći oblik IP adrese su \textbf{IPv4 adrese}\footnote{IPv4 označuje četvrtu verziju Internet Protokola.}.
+Najčešći oblik IP adrese su \textbf{IPv4 adrese}\footnote{IPv4 označava četvrtu verziju Internet Protokola.}.
 IPv4 adrese sastoje se od 32 bita, što znači da je maksimalni broj IPv4 adresa $ 2^{32} $ (4,294,967,796).
 Drugim riječima, najveći broj uređaja koji mogu biti adresirani na Internetu pomoću IPv4 adresa je $ 2^{32} $.
 
@@ -140,6 +141,8 @@ Iz ovog primjera možemo izvesti sljedeću definiciju protokola.
 
 \definition{Mrežni protokol je (obično standardizirani) skup pravila koja omogućuju koordinaciju i komunikaciju između dva ili više programa ili računala u mreži.}
 
+\subsubsection{TCP/IP}
+
 Nakon IP-a, sljedeći najbitniji protokol koji tvori TCP/IP skup protokola je \textbf{TCP} (engl. \textit{Transmission Control Protocol}).
 U prijašnjem poglavlju smo rekli da IP omogućuje uređajima da međusobno šalju podatke u obliku podatkovnih paketa.
 Međutim, tu IP staje.
@@ -167,4 +170,45 @@ Port se zapisuje nakon IP adrese i od nje odvaja dvotočkom, npr. \verb|127.0.0.
     \caption{Popis čestih rezerviranih portova i pripadajućih protokola.}
     \label{tab:ports}
 \end{table}
+
+TCP koristi IP, on spada u jednu razinu više u mrežnoj hijerarhiji.
+On omogućava dvosmjernu i pouzdanu komunikaciju između računala u mreži.
+Pouzdana je zato što TCP garantira da će drugo računalo primiti poslane podatkovne pakete u smislu da će neke pakete ponovno poslati ako se dogodila privremena greška u slanju ili primanju.
+Naravno, TCP ne može garantirati da će slanje uspjeti ako postoji dugotrajni problem s jednim od računala.
+Mnogo drugih protokola, npr.\ SMTP, FTP, HTTP, itd., koriste TCP\.
+
+TCP nije jedini protokol koji se koristi za slanje i primanje podataka, tj.\ za transport podataka.
+Drugi takav protokol je \textbf{UDP} (engl. \textit{User Datagram Protocol}).
+UDP, kao i TCP, isto koristi IP i spada u istu hijerahisku razinu mrežnih protokola.
+Kao i TCP, UDP služi za slanje i primanje podataka na razini programa te isto koristi portove.
+Glavna razlika je ta što UDP ne garantira da će svi poslani podatkovni paketi stići na njihovo odredište ako postoje smetnje u mreži, a često postoje.
+Ovo je zapravo dobra stvar za neke aplikacije, recimo usluge za videje na zahtjev (VoD, engl. \textit{Video on Demand}), npr.\ YouTube, Twitch, itd.
+To je dobro za njih jer je korisnicima puno prihvatljivije da video izgubi malo kvalitete na nekoliko sekundi nego da potpuno zastane dok TCP ne pošalje ponovno pakete koji nisu bili primljeni.
+Drugim riječima, UDP je koristan za sustav koji zahtjevaju komunikaciju u stvarnom vremenu.
+
+\subsubsection{SMTP}
+
+IP i TCP su protokoli koji služe osnovnoj komunikaciji između računala i pripadajućih programa.
+Iznad njih se nalaze aplikacijski protokoli napravljeni za određene vrste aplikacija.
+Jedan od najkorišteniji i najstarijih je \textbf{SMTP} (engl. \textit{Simple Mail Transfer Protocol}).
+On služi za slanje i primanje elektroničke pošte.
+Originalni SMTP je naprarvljen 1981.\ da zamjeni korištenje FTP-a, jednog drugog aplikacijskog protokola, za email.
+Komunikacija preko SMTP-a odvija se pomoću SMTP servera koji jedan drugome šalju poruke.
+Obično će se SMTP server neke domene odnosno stranice nalaziti na poddomeni \verb|mail|, npr. \verb|mail.carnet.hr|.
+Korisnici obično interaktiraju sa SMTP serverom pomoću SMTP klijenta, najčešće aplikacije poput Gmaila ili Outlooka.
+SMTP server će, po zahtjevu za slanje pošte, pomoću DNS-a naći IP adresu SMTP servera primatelja te poslati poruku.
+
+Naravno, originalni SMTP nije verzija SMTP-a koja se koristi danas.
+Tijekom godina je SMTP standard bio proširivan.
+Jedna od najvećih mana originalne verzija je manjak mehanizma za provjeru ima li SMTP server koji je poslao poštu dozvolu slati u ime neke domene.
+Nije postojao način da korisnik provjeri je li email koji je primio lažiran.
+Danas postoji više načina za provjeru, jedan od njih je DMARC\.
+
+\subsubsection{FTP}
+
+\textbf{FTP} (engl. \textit{File Transfer Protocol}) je još jedan aplikacijski protokol koji se koristi za slanje i primanje datoteka preko mreže.
+FTP je još stariji od SMTP-a, originalno razvijen 1971.
+Kao i kod SMTP-a, rad se odvija pomoću FTP servera, koji obično imaju poddomenu \verb|ftp| (npr. \verb|ftp.example.com|), a korisnici njima upravljaju preko FTP klijenata.
+Poznati FTP klijenti uključuju FileZilla i WinSCP\.
+Danas se često koristi protokol \textbf{SFTP} (engl. \textit{SSH File Transfer Protocol}) koji koristi \textbf{SSH} (engl. \textit{Secure Shell}) protokol za enkripciju podataka.
 

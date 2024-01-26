@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d1aa470f-bf93-44d0-9691-94c354827810" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/lekcije/lekcija-01/skripta/src/images/dns.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lekcije/lekcija-01/skripta/out/lekcija-01.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/lekcije/lekcija-01/skripta/out/lekcija-01.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lekcije/lekcija-01/skripta/src/lectures/internet.tex" beforeDir="false" afterPath="$PROJECT_DIR$/lekcije/lekcija-01/skripta/src/lectures/internet.tex" afterDir="false" />
@@ -51,11 +51,12 @@
     "git-widget-placeholder": "main",
     "go.import.settings.migrated": "true",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "//wsl$/Ubuntu-20.04/home/optimuseprime/Projects/web-dev-materials/lekcije/lekcija-01/skripta/src/images",
+    "last_opened_file_path": "//wsl$/Ubuntu-22.04/home/optimuseprime/Projects/web-dev-materials",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -105,6 +106,9 @@
       <workItem from="1706120102089" duration="7047000" />
       <workItem from="1706130293500" duration="25000" />
       <workItem from="1706206718660" duration="8200000" />
+      <workItem from="1706251121064" duration="26000" />
+      <workItem from="1706251170772" duration="371000" />
+      <workItem from="1706251589219" duration="2391000" />
     </task>
     <servers />
   </component>
