@@ -5,9 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d1aa470f-bf93-44d0-9691-94c354827810" name="Changes" comment="završio mrežne protokole">
-      <change afterPath="$PROJECT_DIR$/lekcije/lekcija-01/skripta/src/kod/uvod-u-css-1/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lekcije/lekcija-01/prezentacija/main.tex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lekcije/lekcija-01/skripta/out/lekcija-01.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/lekcije/lekcija-01/skripta/out/lekcija-01.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lekcije/lekcija-01/skripta/out/lekcija-01.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lekcije/lekcija-01/skripta/src/lectures/internet.tex" beforeDir="false" afterPath="$PROJECT_DIR$/lekcije/lekcija-01/skripta/src/lectures/internet.tex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lekcije/lekcija-01/skripta/src/lectures/www.tex" beforeDir="false" afterPath="$PROJECT_DIR$/lekcije/lekcija-01/skripta/src/lectures/www.tex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lekcije/lekcija-01/skripta/src/main.tex" beforeDir="false" afterPath="$PROJECT_DIR$/lekcije/lekcija-01/skripta/src/main.tex" afterDir="false" />
     </list>
@@ -58,7 +59,7 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.fonts.default&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -73,8 +74,29 @@
       <recent name="\\wsl$\Ubuntu-20.04\home\optimuseprime\Projects\web-dev-materials\src" />
     </key>
   </component>
-  <component name="RunManager">
-    <configuration name="Lekcija 01" type="LATEX_RUN_CONFIGURATION" factoryName="LaTeX configuration factory">
+  <component name="RunManager" selected="LaTeX.Lekcija 01 - Prezentacija">
+    <configuration name="Lekcija 01 - Prezentacija" type="LATEX_RUN_CONFIGURATION" factoryName="LaTeX configuration factory">
+      <texify>
+        <compiler>PDFLATEX</compiler>
+        <compiler-path />
+        <sumatra-path />
+        <pdf-viewer>BUILT-IN-PDF-VIEWER</pdf-viewer>
+        <viewer-command />
+        <compiler-arguments />
+        <envs />
+        <main-file>$PROJECT_DIR$/lekcije/lekcija-01/prezentacija/main.tex</main-file>
+        <output-path>$PROJECT_DIR$/lekcije/lekcija-01/prezentacija/out</output-path>
+        <auxil-path>$PROJECT_DIR$/lekcije/lekcija-01/prezentacija/auxil</auxil-path>
+        <compile-twice>false</compile-twice>
+        <output-format>PDF</output-format>
+        <latex-distribution>MIKTEX</latex-distribution>
+        <has-been-run>true</has-been-run>
+        <bib-run-config>[]</bib-run-config>
+        <makeindex-run-config>[]</makeindex-run-config>
+      </texify>
+      <method v="2" />
+    </configuration>
+    <configuration name="Lekcija 01 - Skripta" type="LATEX_RUN_CONFIGURATION" factoryName="LaTeX configuration factory">
       <texify>
         <compiler>PDFLATEX</compiler>
         <compiler-path />
@@ -88,13 +110,17 @@
         <auxil-path>$PROJECT_DIR$/auxil</auxil-path>
         <compile-twice>false</compile-twice>
         <output-format>PDF</output-format>
-        <latex-distribution>PROJECT_SDK</latex-distribution>
+        <latex-distribution>MIKTEX</latex-distribution>
         <has-been-run>true</has-been-run>
         <bib-run-config>[]</bib-run-config>
         <makeindex-run-config>[]</makeindex-run-config>
       </texify>
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="LaTeX.Lekcija 01 - Skripta" />
+      <item itemvalue="LaTeX.Lekcija 01 - Prezentacija" />
+    </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -114,7 +140,9 @@
       <workItem from="1706251589219" duration="3856000" />
       <workItem from="1706255688144" duration="1433000" />
       <workItem from="1706268559576" duration="3995000" />
-      <workItem from="1706272764079" duration="21000" />
+      <workItem from="1706272764079" duration="272000" />
+      <workItem from="1706278066730" duration="2271000" />
+      <workItem from="1706294861662" duration="4217000" />
     </task>
     <servers />
   </component>
@@ -129,5 +157,9 @@
   <component name="VgoProject">
     <integration-enabled>false</integration-enabled>
     <settings-migrated>true</settings-migrated>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

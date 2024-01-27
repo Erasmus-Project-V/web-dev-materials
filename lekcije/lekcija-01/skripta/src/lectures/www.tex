@@ -35,15 +35,16 @@ HTTP koristi \textbf{HTTP metode} za izvršavanje zahtjeva.
 Metoda govori koja vrstu akcije izvršava određeni URL na serveru.
 HTTP zahtjev se sastoji od metode, URL-a zahtjeva, tijela (sadržaja) zahtjeva, verzije HTTP-a i \textit{headera} koji sadrže metapodatke o zahtjevu.
 
-\begin{table}[]
+\begin{table}[h]
+    \centering
     \begin{tabular}{|l|l|}
         \hline
-        \textbf{Metoda} & \textbf{Svrha metode}                                                                                                \\ \hline
-        GET             & Dobivanje informacija o nekom resursu, npr. korisnicima, od servera. GET zahtjev ne smije imati tijelo.              \\ \hline
-        POST            & Stvaranje novog resursa na serveru, npr. novog korisnika. Obično sadrži tijelo, npr. ime, email i lozinka korisnika. \\ \hline
-        PUT             & Promjena resursa na serveru, npr. lozinka korisnika, tako što server zamjeni cijeli resurs.                          \\ \hline
-        PATCH           & Promjena resursa na serveru tako što server zamjeni samo taj podatak koji se mjenja.                                 \\ \hline
-        DELETE          & Brisanje resursa sa servera.                                                                                         \\ \hline
+        \textbf{Metoda} & \textbf{Svrha metode}                                                                                                                                           \\ \hline
+        GET             & \begin{tabular}[c]{@{}l@{}}Dobivanje informacija o nekom resursu, npr. korisnicima, \\ od servera. GET zahtjev ne smije imati tijelo.\end{tabular}              \\ \hline
+        POST            & \begin{tabular}[c]{@{}l@{}}Stvaranje novog resursa na serveru, npr. novog korisnika. \\ Obično sadrži tijelo, npr. ime, email i lozinka korisnika.\end{tabular} \\ \hline
+        PUT             & \begin{tabular}[c]{@{}l@{}}Promjena resursa na serveru, npr. lozinka korisnika, \\ tako što server zamjeni cijeli resurs.\end{tabular}                          \\ \hline
+        PATCH           & \begin{tabular}[c]{@{}l@{}}Promjena resursa na serveru tako što server zamjeni\\ samo taj podatak koji se mjenja.\end{tabular}                                  \\ \hline
+        DELETE          & Brisanje resursa sa servera.                                                                                                                                    \\ \hline
     \end{tabular}
     \caption{Popis najčešćih HTTP metoda i njihovih svrha.}
     \label{table:http-metode}
@@ -52,18 +53,19 @@ HTTP zahtjev se sastoji od metode, URL-a zahtjeva, tijela (sadržaja) zahtjeva, 
 Svaki HTTP zahtjev mora dobiti i odgovor koji se sastoji od HTTP koda i tijela odgovora.
 Tijelo nije obavezno.
 
-\begin{table}[]
+\begin{table}[h]
+    \centering
     \begin{tabular}{|l|l|}
         \hline
-        \textbf{Kod odgovora}     & \textbf{Značenje}                                                              \\ \hline
-        200 OK                    & Zahtjev je uspješno izvršen, zatražene informacije su poslane u odgovoru.      \\ \hline
-        201 Created               & Zahtjev je uspješno izvršen, novi resurs je stvoren na serveru.                \\ \hline
-        307 Temporary Redirect    & Server preusmjeri zahtjev s istom metodu na drugi URL.                         \\ \hline
-        400 Bad Request           & Klijent je krivo formatirao zahtjev.                                           \\ \hline
-        401 Unauthorized          & Zahtjev nije uspio, klijent se prvo mora autentificirati, odnsono reći tko je. \\ \hline
-        403 Forbidden             & Klijent nema dozvolu pristupiti tom resursu.                                   \\ \hline
-        404 Not Found             & Zatraženi resurs ne postoji na serveru.                                        \\ \hline
-        500 Internal Server Error & Postoji problem na serverskoj strani koja onemogućuje izvršavanje zahtjeva.    \\ \hline
+        \textbf{Kod odgovora}     & \textbf{Značenje}                                                                                                         \\ \hline
+        200 OK                    & \begin{tabular}[c]{@{}l@{}}Zahtjev je uspješno izvršen, zatražene \\ informacije su poslane u odgovoru.\end{tabular}      \\ \hline
+        201 Created               & \begin{tabular}[c]{@{}l@{}}Zahtjev je uspješno izvršen, \\ novi resurs je stvoren na serveru.\end{tabular}                \\ \hline
+        307 Temporary Redirect    & Server preusmjeri zahtjev s istom metodu na drugi URL.                                                                    \\ \hline
+        400 Bad Request           & Klijent je krivo formatirao zahtjev.                                                                                      \\ \hline
+        401 Unauthorized          & \begin{tabular}[c]{@{}l@{}}Zahtjev nije uspio, klijent se prvo mora \\ autentificirati, odnsono reći tko je.\end{tabular} \\ \hline
+        403 Forbidden             & Klijent nema dozvolu pristupiti tom resursu.                                                                              \\ \hline
+        404 Not Found             & Zatraženi resurs ne postoji na serveru.                                                                                   \\ \hline
+        500 Internal Server Error & \begin{tabular}[c]{@{}l@{}}Postoji problem na serverskoj strani \\ koja onemogućuje izvršavanje zahtjeva.\end{tabular}    \\ \hline
     \end{tabular}
     \caption{Popis najbitnijih kodova HTTP odgovora i njihovih značenja.}
     \label{tab:http-kodovi}
